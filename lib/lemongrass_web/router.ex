@@ -19,8 +19,8 @@ defmodule LemongrassWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", LemongrassWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", LemongrassWeb do
+    pipe_through :api
+    get "/users", UserController, :index
+  end
 end
